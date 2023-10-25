@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2023
-** mini_printf
+** my_printf
 ** File description:
-** tests mini printf
+** tests my_printf
 */
 
 #include <criterion/criterion.h>

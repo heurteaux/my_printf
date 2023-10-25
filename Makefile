@@ -12,7 +12,10 @@ SRCS		=	base_lib/my_put_nbr_loops.c	\
 				base_lib/my_putchar.c		\
 				base_lib/my_putstr.c		\
 				base_lib/my_strlen.c		\
+				base_lib/my_put_nbr_base.c	\
+				base_lib/my_put_nbr_base_loops.c	\
 				internal_functions/display_args.c	\
+				internal_functions/display_args_math.c	\
 				my_printf.c
 
 OBJS	=	$(SRCS:.c=.o)
@@ -40,3 +43,6 @@ re: fclean all
 tests_run:	$(OBJS)
 	gcc -o $(TEST_NAME) $(OBJS) $(SRC_TEST) $(TESTFLAGS)
 	./unit_tests
+
+dev_test: tests_run
+	code_stl

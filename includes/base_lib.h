@@ -20,3 +20,13 @@ void for_negative(long nb, int arg_length, long result_holder);
 void for_positive(int nb, int arg_length, long result_holder);
 
 int int_length(int a);
+
+int my_put_nbr_base(int nb_origin, char *base_str);
+
+void
+for_positive_b(long nb, int arg_length, long result_holder, char *base_str);
+
+void
+for_negative_b(long nb, int arg_length, long result_holder, char *base_str);
+
+int int_base_length(int a, int base);
