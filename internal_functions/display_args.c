@@ -5,7 +5,8 @@
 ** display_args.c
 */
 
-#include "includes/bsprintf.h"
+#include "../includes/internal_functions.h"
+#include "../includes/base_lib.h"
 
 void display_and_count_char(char to_print, int *count)
 {

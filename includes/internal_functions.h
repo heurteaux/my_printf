@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** mini_printf
 ** File description:
-** internal.h
+** bsprintf.h
 */
 
 #pragma once

@@ -6,7 +6,7 @@
 */
 
 #include <stdarg.h>
-#include "includes/internal.h"
+#include "includes/internal_functions.h"
 #include "includes/base_lib.h"
 
 void variables_handler(const char *str, int i, va_list ptr, int *count)
@@ -50,7 +50,7 @@ int is_valid_variable_call(char to_test)
     }
 }
 
-int my_printf(const char *format, ...)
+int mini_printf(const char *format, ...)
 {
     va_list ptr;
     int nb_characters_printed = 0;
