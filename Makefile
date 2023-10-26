@@ -16,6 +16,7 @@ SRCS		=	base_lib/my_put_nbr_loops.c	\
 				base_lib/my_put_nbr_base_loops.c	\
 				internal_functions/display_args.c	\
 				internal_functions/display_args_math.c	\
+				internal_functions/put_address.c	\
 				my_printf.c
 
 OBJS	=	$(SRCS:.c=.o)

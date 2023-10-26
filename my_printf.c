@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** mini_printf
 ** File description:
-** mini_printf.c
+** internal_data_structure.h
 */
 
 #include <stdarg.h>
@@ -64,6 +64,6 @@ int my_printf(const char *format, ...)
 /*int main(void)
 {
     int test = 23761;
-    int caca = my_printf("caca %o\n", test);
+    int caca = my_printf("caca %p tests test\n", &test);
     my_printf("%d\n", caca);
 }*/

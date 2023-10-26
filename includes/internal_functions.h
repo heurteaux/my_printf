@@ -29,3 +29,5 @@ display_and_count_percent(__attribute__((unused)) va_list ptr, int *count);
 void display_and_count_hex(va_list ptr, int *count);
 
 void display_and_count_octal(va_list ptr, int *count);
+
+void my_put_address(void *to_print, int *count);
