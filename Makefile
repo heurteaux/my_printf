@@ -14,6 +14,7 @@ SRCS		=	base_lib/my_put_nbr_loops.c	\
 				base_lib/my_strlen.c		\
 				base_lib/my_put_nbr_base.c	\
 				base_lib/my_put_nbr_base_loops.c	\
+				base_lib/my_strncmp.c	\
 				internal_functions/display_args.c	\
 				internal_functions/display_args_math.c	\
 				internal_functions/put_address.c	\

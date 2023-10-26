@@ -30,4 +30,8 @@ void display_and_count_hex(va_list ptr, int *count);
 
 void display_and_count_octal(va_list ptr, int *count);
 
+void display_and_count_unsigned_short(va_list ptr, int *count);
+
+void display_and_count_long_int(va_list ptr, int *count);
+
 void my_put_address(void *to_print, int *count);

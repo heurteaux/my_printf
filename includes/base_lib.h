@@ -30,3 +30,5 @@ void for_negative_b(unsigned long long nb, int arg_length, long result_holder,
     char *base_str);
 
 int int_base_length(int a, int base);
+
+int my_strncmp(char const *s1, char const *s2, int n);
