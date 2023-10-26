@@ -24,4 +24,4 @@
 
 [X] Hexadecimal integer (%x)
 
-[ ] Print memory address in the hexadecimal form (%p)
+[X] Print memory address in the hexadecimal form (%p)
