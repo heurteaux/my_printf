@@ -17,7 +17,8 @@ static int get_diviseur(int len, int base)
 }
 
 void
-for_positive_b(unsigned long long nb, int arg_length, long int result_holder, char *base_str)
+for_positive_b(unsigned long long nb, int arg_length, long int result_holder,
+    char *base_str)
 {
     int base = my_strlen(base_str);
 
@@ -28,7 +29,8 @@ for_positive_b(unsigned long long nb, int arg_length, long int result_holder, ch
 }
 
 void
-for_negative_b(unsigned long long int nb, int arg_length, long result_holder, char *base_str)
+for_negative_b(unsigned long long int nb, int arg_length, long result_holder,
+    char *base_str)
 {
     int bs = my_strlen(base_str);
 
