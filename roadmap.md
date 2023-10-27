@@ -6,22 +6,22 @@
 
 [X] Percent (%%)
 
-[ ] Signed float (%f)
+[X] Signed float (%f)
 
-[ ] Floating point number (%e)
+[X] Floating point number (%e)
 
 [X] String or sequence of character (%s)
 
-[ ] double (%lf)
+[X] double (%lf)
 
-[ ] long double (%Lf)
+[X] long double (%Lf)
 
 [X] Octal integer (%o)
 
-[ ] short unsigned integer (%u)
+[X] short unsigned integer (%u)
 
-[ ] Long decimal integer (%ld)
+[X] Long decimal integer (%ld)
 
 [X] Hexadecimal integer (%x)
 
-[ ] Print memory address in the hexadecimal form (%p)
+[X] Print memory address in the hexadecimal form (%p)

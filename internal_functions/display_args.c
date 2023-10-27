@@ -35,5 +35,5 @@ void display_and_count_address(va_list ptr, int *count)
 {
     void *to_print = va_arg(ptr, void *);
 
-    *count += sizeof(&to_print);
+    my_put_address(to_print, count);
 }

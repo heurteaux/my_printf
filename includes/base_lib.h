@@ -21,12 +21,14 @@ void for_positive(int nb, int arg_length, long result_holder);
 
 int int_length(int a);
 
-int my_put_nbr_base(int nb_origin, char *base_str);
+int my_put_nbr_base(unsigned long long nb_origin, char *base_str);
 
-void
-for_positive_b(long nb, int arg_length, long result_holder, char *base_str);
+void for_positive_b(unsigned long long nb, int arg_length, long result_holder,
+    char *base_str);
 
-void
-for_negative_b(long nb, int arg_length, long result_holder, char *base_str);
+void for_negative_b(unsigned long long nb, int arg_length, long result_holder,
+    char *base_str);
 
 int int_base_length(int a, int base);
+
+int my_strncmp(char const *s1, char const *s2, int n);

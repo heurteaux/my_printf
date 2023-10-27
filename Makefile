@@ -14,8 +14,15 @@ SRCS		=	base_lib/my_put_nbr_loops.c	\
 				base_lib/my_strlen.c		\
 				base_lib/my_put_nbr_base.c	\
 				base_lib/my_put_nbr_base_loops.c	\
+				base_lib/my_strncmp.c	\
 				internal_functions/display_args.c	\
 				internal_functions/display_args_math.c	\
+				internal_functions/put_address.c	\
+				internal_functions/display_double.c	\
+				internal_functions/display_long_double.c	\
+				internal_functions/display_rounded_float.c	\
+				internal_functions/display_scientific.c	\
+				internal_functions/display_args_complex_types.c	\
 				my_printf.c
 
 OBJS	=	$(SRCS:.c=.o)
