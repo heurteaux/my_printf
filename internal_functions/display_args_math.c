@@ -35,25 +35,10 @@ void display_and_count_nbr(va_list ptr, int *count)
         *count += 1;
 }
 
-void display_and_count_unsigned_short(va_list ptr, int *count)
-{
-    unsigned int to_print = va_arg(ptr, unsigned int);
-
-    my_put_nbr((int)to_print);
-    *count += int_length((int)to_print);
-}
-
-void display_and_count_long_int(va_list ptr, int *count)
-{
-    long to_print = va_arg(ptr, long);
-
-    my_put_nbr((int)to_print);
-    *count += int_length((int)to_print);
-}
-
-void display_and_count_double(va_list ptr, int *count)
+void display_and_count_scientific_float(va_list ptr,
+    __attribute__((unused)) int *count)
 {
     double to_print = va_arg(ptr, double);
 
-    display_double(to_print);
+    display_scientific(to_print);
 }

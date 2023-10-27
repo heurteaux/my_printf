@@ -39,3 +39,15 @@ void my_put_address(void *to_print, int *count);
 void display_double(double a);
 
 void display_and_count_double(va_list ptr, int *count);
+
+void display_and_count_long_double(va_list ptr, int *count);
+
+void display_long_double(double a);
+
+void display_float(double a);
+
+void display_and_count_float(va_list ptr, int *count);
+
+void display_scientific(double a);
+
+void display_and_count_scientific_float(va_list ptr, int *count);

@@ -11,7 +11,7 @@
 
 static int check_flags(int e, const char *str, va_list ptr, int *count)
 {
-    for (int n = 0; n < 10; n++) {
+    for (int n = 0; n < 14; n++) {
         if (my_strncmp(str, array[n].flag, e) == 0) {
             array[n].ptr(ptr, count);
             return 1;
@@ -51,13 +51,12 @@ int my_printf(const char *format, ...)
     return nb_characters_printed;
 }
 
-/*
-int main(void)
-{
-    int test = 2147483640;
-    printf("%x\n", test);
 
-    int caca = my_printf("%x\n", test);
+/*int main(void)
+{
+    long double test = 12.239;
+    printf("%Lf\n", test);
+
+    int caca = my_printf("%Lf\n", test);
     my_printf("%d\n", caca);
-}
-*/
+}*/

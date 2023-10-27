@@ -8,7 +8,7 @@
 #include "../includes/base_lib.h"
 #include <stdio.h>
 
-static void display_long_double(double a)
+void display_long_double(double a)
 {
     int tempo = 0;
     int rounded = (int) a;

@@ -15,7 +15,7 @@ typedef struct functions_s {
     void (*ptr)(va_list, int *);
 } functions_t;
 
-functions_t array[10] = {{"c", display_and_count_char},
+functions_t array[20] = {{"c", display_and_count_char},
     {"d", display_and_count_nbr},
     {"i", display_and_count_nbr},
     {"s", display_and_count_string},
@@ -25,4 +25,7 @@ functions_t array[10] = {{"c", display_and_count_char},
     {"o", display_and_count_octal},
     {"u", display_and_count_unsigned_short},
     {"ld", display_and_count_long_int},
-    {"lf", display_and_count_double}};
+    {"lf", display_and_count_double},
+    {"Lf", display_and_count_long_double},
+    {"f", display_and_count_float},
+    {"e", display_and_count_scientific_float}};

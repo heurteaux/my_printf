@@ -7,7 +7,7 @@
 #include "../includes/base_lib.h"
 #include <stdio.h>
 
-static void display_rounded_float(double a)
+void display_float(double a)
 {
     int rounded = (int) a;
     int decimal_part = (int) ((a - rounded) * 1000000);
