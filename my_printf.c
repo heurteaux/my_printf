@@ -23,7 +23,6 @@ static int check_flags(int e, const char *str, va_list ptr, int *count)
 int variables_handler(const char *str, va_list ptr, int *count)
 {
     int temp;
-
     for (int e = 3; e > 0; e--) {
         temp = check_flags(e, str, ptr, count);
         if (temp == 1)
@@ -40,8 +39,9 @@ int my_printf(const char *format, ...)
     va_start(ptr, format);
     for (int i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%') {
-            i += variables_handler(&format[i + 1], ptr,
+            variables_handler(&format[i + 1], ptr,
             &nb_characters_printed);
+            i++;
             continue;
         }
         nb_characters_printed++;
@@ -54,9 +54,6 @@ int my_printf(const char *format, ...)
 
 /*int main(void)
 {
-    long double test = 12.239;
-    printf("%Lf\n", test);
-
-    int caca = my_printf("%Lf\n", test);
-    my_printf("%d\n", caca);
+    double nb = 200000;
+    int exp = my_printf("%e\n", nb);
 }*/
