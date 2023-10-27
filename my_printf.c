@@ -8,7 +8,6 @@
 #include <stdarg.h>
 #include "includes/internal_data_structures.h"
 #include "includes/base_lib.h"
-#include <stdio.h>
 
 static int check_flags(int e, const char *str, va_list ptr, int *count)
 {

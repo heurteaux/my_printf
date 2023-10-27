@@ -24,4 +24,5 @@ functions_t array[10] = {{"c", display_and_count_char},
     {"x", display_and_count_hex},
     {"o", display_and_count_octal},
     {"u", display_and_count_unsigned_short},
-    {"ld", display_and_count_long_int}};
+    {"ld", display_and_count_long_int},
+    {"lf", display_and_count_double}};

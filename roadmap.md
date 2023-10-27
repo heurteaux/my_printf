@@ -6,15 +6,15 @@
 
 [X] Percent (%%)
 
-[ ] Signed float (%f)
+[X] Signed float (%f)
 
-[ ] Floating point number (%e)
+[X] Floating point number (%e)
 
 [X] String or sequence of character (%s)
 
-[ ] double (%lf)
+[X] double (%lf)
 
-[ ] long double (%Lf)
+[X] long double (%Lf)
 
 [X] Octal integer (%o)
 

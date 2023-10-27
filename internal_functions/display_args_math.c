@@ -50,3 +50,10 @@ void display_and_count_long_int(va_list ptr, int *count)
     my_put_nbr((int)to_print);
     *count += int_length((int)to_print);
 }
+
+void display_and_count_double(va_list ptr, int *count)
+{
+    double to_print = va_arg(ptr, double);
+
+    display_double(to_print);
+}
