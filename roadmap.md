@@ -18,10 +18,10 @@
 
 [X] Octal integer (%o)
 
-[ ] short unsigned integer (%u)
+[X] short unsigned integer (%u)
 
-[ ] Long decimal integer (%ld)
+[X] Long decimal integer (%ld)
 
 [X] Hexadecimal integer (%x)
 
-[ ] Print memory address in the hexadecimal form (%p)
+[X] Print memory address in the hexadecimal form (%p)

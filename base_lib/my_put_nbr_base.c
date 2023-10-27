@@ -29,12 +29,12 @@ int int_base_length(int a, int base)
     return counter;
 }
 
-int my_put_nbr_base(int nb_origin, char *base_str)
+int my_put_nbr_base(unsigned long long nb_origin, char *base_str)
 {
     int base = my_strlen(base_str);
     int arg_length = int_base_length(nb_origin, base);
-    long result_holder = 0;
-    long nb = nb_origin;
+    long int result_holder = 0;
+    long int nb = nb_origin;
 
     if (nb == 0) {
         write(1, &ZERO, 1);
@@ -42,7 +42,7 @@ int my_put_nbr_base(int nb_origin, char *base_str)
     }
     if (nb > 0) {
         for_positive_b(nb, arg_length, result_holder, base_str);
-    } else if (nb < 0) {
+    }else if (nb < 0) {
         write(1, "-", 1);
         for_negative_b(nb, arg_length, result_holder, base_str);
     }

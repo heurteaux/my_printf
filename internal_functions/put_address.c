@@ -5,22 +5,26 @@
 ** put_address.c
 */
 
-#include <stdio.h>
 #include "../includes/base_lib.h"
 
-void my_put_address(void *to_print)
+// Que quelqu'un fasse brûler cette fonction en enfer.
+void my_put_address(void *to_print, int *count)
 {
-    unsigned long test = (long)to_print;
+    unsigned long long_to_print = (unsigned long)to_print;
+    unsigned long temp_chunk;
 
-    my_put_nbr_base(test, "0123456789abcdef");
+    my_putstr("0x");
+    for (int i = 11; i >= 0; i--) {
+        temp_chunk = (long_to_print >> ((i * 4)) & 0xF);
+        my_put_nbr_base(temp_chunk, "0123456789abcdef");
+        *count += 1;
+    }
+    *count += 2;
 }
 
 /*int main(void)
 {
     int test = 39;
-    printf("%d\n", (int)sizeof(void *));
     my_put_address(&test);
-    my_putchar('\n');
-    printf("%x\n", (long)&test);
-    printf("%p\n", &test);
+    printf("%p", &test);
 }*/
