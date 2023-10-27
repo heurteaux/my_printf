@@ -28,7 +28,9 @@ int superior(double nb, int i)
     display_double(nb);
     my_putchar('e');
     my_putchar('+');
+    if (i < 9) {
     my_putchar('0');
+    }
     my_put_nbr(i);
 }
 
