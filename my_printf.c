@@ -6,54 +6,44 @@
 */
 
 #include <stdarg.h>
-#include "includes/internal_data_structures.h"
+#include "includes/conversion_specifiers_array.h"
+#include "includes/internal_functions.h"
 #include "includes/base_lib.h"
+#include <stdio.h>
 
-static int check_flags(int e, const char *str, va_list ptr, int *count)
+void variables_handler(specifier_t specifiers, va_list ptr)
 {
-    for (int n = 0; n < 14; n++) {
-        if (my_strncmp(str, array[n].flag, e) == 0) {
-            array[n].ptr(ptr, count);
-            return 1;
+    for (int i = 0; i < 16; i++) {
+        if (conversion_specifiers_array[i].convertion_specifier ==
+            specifiers.conversion) {
+            conversion_specifiers_array[i].ptr(ptr);
         }
     }
-    return 0;
 }
 
-int variables_handler(const char *str, va_list ptr, int *count)
-{
-    int temp;
-    for (int e = 3; e > 0; e--) {
-        temp = check_flags(e, str, ptr, count);
-        if (temp == 1)
-            return e;
-    }
-    return 1;
-}
-
-int my_printf(const char *format, ...)
+void my_printf(const char *format, ...)
 {
     va_list ptr;
-    int nb_characters_printed = 0;
+    char **specification;
 
     va_start(ptr, format);
     for (int i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%') {
-            variables_handler(&format[i + 1], ptr,
-            &nb_characters_printed);
+            specifier_t specifiers = collect_flags(&format[i + 1]);
+            variables_handler(specifiers, ptr);
             i++;
             continue;
         }
-        nb_characters_printed++;
         my_putchar(format[i]);
     }
     va_end(ptr);
-    return nb_characters_printed;
+    //return nb_characters_printed;
 }
 
-
-/*int main(void)
+int main(void)
 {
-    double nb = 200000;
-    int exp = my_printf("%e\n", nb);
-}*/
+    int test = 12;
+    printf("%d\n", test);
+
+    my_printf("%d\n", test);
+}

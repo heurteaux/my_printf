@@ -7,7 +7,6 @@
 
 #include "../includes/base_lib.h"
 
-// Que quelqu'un fasse brûler cette fonction en enfer.
 void my_put_address(void *to_print, int *count)
 {
     unsigned long long_to_print = (unsigned long)to_print;

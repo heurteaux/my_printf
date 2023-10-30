@@ -6,6 +6,7 @@
 */
 
 #pragma once
+#include <stdbool.h>
 
 int my_strlen(char const *str);
 
@@ -32,3 +33,7 @@ void for_negative_b(unsigned long long nb, int arg_length, long result_holder,
 int int_base_length(int a, int base);
 
 int my_strncmp(char const *s1, char const *s2, int n);
+
+int my_getnbr(const char *str);
+
+bool is_digit(char to_test);

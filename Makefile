@@ -23,6 +23,9 @@ SRCS		=	base_lib/my_put_nbr_loops.c	\
 				internal_functions/display_rounded_float.c	\
 				internal_functions/display_scientific.c	\
 				internal_functions/display_args_complex_types.c	\
+				internal_functions/specifiers_collection.c	\
+				internal_functions/specifiers_manipulation.c	\
+				internal_functions/data_types/types_instancing.c	\
 				my_printf.c
 
 OBJS	=	$(SRCS:.c=.o)
