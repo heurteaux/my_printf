@@ -25,3 +25,5 @@
 [X] Hexadecimal integer (%x)
 
 [X] Print memory address in the hexadecimal form (%p)
+
+Order for format specifier: "%flags/field width/precision/length modifier/conversion"

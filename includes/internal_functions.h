@@ -6,14 +6,8 @@
 */
 
 #include <stdarg.h>
-
+#include "internal_data_structures.h"
 #pragma once
-
-int sum_numbers(int n, ...);
-
-int sum_strings_length(int n, ...);
-
-void disp_stdarg(char *s, ...);
 
 void display_and_count_char(va_list to_print, int *count);
 
@@ -51,3 +45,7 @@ void display_and_count_float(va_list ptr, int *count);
 void display_scientific(double a);
 
 void display_and_count_scientific_float(va_list ptr, int *count);
+
+specifier_t collect_flags(const char *format);
+
+int nb_len(const char *format);
