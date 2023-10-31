@@ -5,8 +5,9 @@
 ** display_floating_pointer.c
 */
 
-#include "../includes/base_lib.h"
-#include "../includes/internal_functions.h"
+#include "../../includes/base_lib.h"
+#include "../../includes/internal_functions.h"
+#include <stdarg.h>
 
 static void inferior(double nb)
 {
@@ -51,3 +52,4 @@ void display_scientific(double a)
         superior(nb);
     }
 }
+

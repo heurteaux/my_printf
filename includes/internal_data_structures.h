@@ -8,11 +8,6 @@
 #pragma once
 #include <stdarg.h>
 
-typedef struct functions_s {
-    char convertion_specifier;
-    void (*ptr)(va_list);
-} functions_t;
-
 typedef struct specifiers_s {
     char *flags;
     int width;
@@ -25,3 +20,8 @@ typedef struct lengths_specifiers_functions_s {
     char *length_specifier;
     void (*ptr)(va_list);
 } length_specifiers_functions_t;
+
+typedef struct functions_s {
+    char convertion_specifier;
+    void (*ptr)(va_list, specifier_t);
+} functions_t;

@@ -2,12 +2,13 @@
 ** EPITECH PROJECT, 2023
 ** Created by seila.aillet@epitech.eu on 26/10/23.
 ** File description:
-** display_double.c
+** display_long_double.c
 */
 
-#include "../includes/base_lib.h"
+#include "../../includes/base_lib.h"
+#include <stdio.h>
 
-void display_double(double a)
+void display_long_double(double a)
 {
     int tempo = 0;
     int rounded = (int) a;
