@@ -5,8 +5,9 @@
 ** display_floating_pointer.c
 */
 
-#include "../includes/base_lib.h"
-#include "../includes/internal_functions.h"
+#include "../../includes/base_lib.h"
+#include "../../includes/internal_functions.h"
+#include <stdarg.h>
 
 static void inferior(double nb)
 {
@@ -16,7 +17,7 @@ static void inferior(double nb)
         nb *= 10;
     }
     display_double(nb);
-    my_putchar('e');
+    my_putchar('E');
     my_putchar('-');
     my_putchar('0');
     my_put_nbr(i);
@@ -26,19 +27,17 @@ static void superior(double nb)
 {
     int i = 0;
 
-    for (; nb > 9; i++) {
+    for (; nb > 10; i++) {
         nb /= 10;
     }
     display_double(nb);
-    my_putchar('e');
+    my_putchar('E');
     my_putchar('+');
-    if (i < 9) {
     my_putchar('0');
-    }
     my_put_nbr(i);
 }
 
-void display_scientific(double a)
+void display_maj_scientific(double a)
 {
     double nb = a;
 
@@ -53,3 +52,4 @@ void display_scientific(double a)
         superior(nb);
     }
 }
+

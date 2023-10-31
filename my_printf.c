@@ -16,7 +16,7 @@ void variables_handler(specifier_t specifiers, va_list ptr)
     for (int i = 0; i < 16; i++) {
         if (conversion_specifiers_array[i].convertion_specifier ==
             specifiers.conversion) {
-            conversion_specifiers_array[i].ptr(ptr);
+            conversion_specifiers_array[i].ptr(ptr, specifiers);
         }
     }
 }
@@ -24,12 +24,12 @@ void variables_handler(specifier_t specifiers, va_list ptr)
 void my_printf(const char *format, ...)
 {
     va_list ptr;
-    char **specification;
+    specifier_t specifiers;
 
     va_start(ptr, format);
     for (int i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%') {
-            specifier_t specifiers = collect_flags(&format[i + 1]);
+            specifiers = collect_flags(&format[i + 1]);
             variables_handler(specifiers, ptr);
             i++;
             continue;
@@ -40,10 +40,11 @@ void my_printf(const char *format, ...)
     //return nb_characters_printed;
 }
 
+/*
 int main(void)
 {
-    int test = 12;
-    printf("%d\n", test);
-
-    my_printf("%d\n", test);
+    char test = 'E';
+    printf("Sample text %c sample text\n", test);
+    my_printf("Sample text %c sample text\n", test);
 }
+*/
