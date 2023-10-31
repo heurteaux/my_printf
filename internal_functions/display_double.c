@@ -6,7 +6,6 @@
 */
 
 #include "../includes/base_lib.h"
-#include <stdio.h>
 
 void display_double(double a)
 {

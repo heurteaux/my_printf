@@ -6,10 +6,12 @@
 */
 
 #include "../includes/base_lib.h"
-#include <stdio.h>
+#include "../includes/internal_functions.h"
 
-int inferior(double nb, int i)
+static void inferior(double nb)
 {
+    int i = 0;
+
     for (; nb < 1; i++) {
         nb *= 10;
     }
@@ -20,8 +22,10 @@ int inferior(double nb, int i)
     my_put_nbr(i);
 }
 
-int superior(double nb, int i)
+static void superior(double nb)
 {
+    int i = 0;
+
     for (; nb > 9; i++) {
         nb /= 10;
     }
@@ -37,16 +41,15 @@ int superior(double nb, int i)
 void display_scientific(double a)
 {
     double nb = a;
-    int i = 0;
 
     if (nb < 0) {
         my_putchar('-');
         nb = nb * (-1);
     }
     if (nb < 1) {
-        inferior(nb, i);
+        inferior(nb);
     }
     if (nb > 1) {
-        superior(nb, i);
+        superior(nb);
     }
 }

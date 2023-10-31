@@ -7,6 +7,7 @@
 
 #include "../includes/internal_functions.h"
 #include "../includes/base_lib.h"
+#include <stdio.h>
 
 void display_and_count_hex(va_list ptr, int *count)
 {
@@ -32,4 +33,12 @@ void display_and_count_nbr(va_list ptr, int *count)
     *count += int_length(to_print);
     if (to_print <= 0)
         *count += 1;
+}
+
+void display_and_count_scientific_float(va_list ptr,
+    __attribute__((unused)) int *count)
+{
+    double to_print = va_arg(ptr, double);
+
+    display_scientific(to_print);
 }
