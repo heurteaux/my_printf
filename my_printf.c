@@ -40,11 +40,9 @@ void my_printf(const char *format, ...)
     //return nb_characters_printed;
 }
 
-/*
 int main(void)
 {
     char test = 'E';
     printf("Sample text %c sample text\n", test);
     my_printf("Sample text %c sample text\n", test);
 }
-*/
