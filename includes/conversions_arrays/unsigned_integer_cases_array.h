@@ -10,5 +10,4 @@
 #include "../../includes/internal_functions.h"
 
 length_specifiers_functions_t unsigned_integer_cases_array[] = {
-        {"", display_and_count_unsigned_nbr}
-};
+    {"", display_and_count_unsigned_nbr}};

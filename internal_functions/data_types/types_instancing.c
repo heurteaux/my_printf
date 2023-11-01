@@ -7,8 +7,10 @@
 
 #include "../../includes/internal_data_structures.h"
 
-specifier_t new_specifier(void) {
+specifier_t new_specifier(void)
+{
     specifier_t new_specifier;
+
     new_specifier.length = "";
     new_specifier.conversion = 0;
     new_specifier.width = 0;

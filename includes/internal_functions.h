@@ -17,8 +17,7 @@ void display_and_count_string(va_list str);
 
 void display_and_count_address(va_list ptr);
 
-void
-display_and_count_percent(__attribute__((unused)) va_list ptr);
+void display_and_count_percent(__attribute__((unused)) va_list ptr);
 
 void display_and_count_hex(va_list ptr);
 
@@ -57,3 +56,7 @@ void display_and_count_maj_hex(va_list ptr);
 void display_maj_scientific(double a);
 
 void display_and_count_maj_scientific_float(va_list ptr);
+
+void display_and_count_ox_hex(va_list ptr);
+
+void display_double_hex(double a);

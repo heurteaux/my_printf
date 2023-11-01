@@ -10,6 +10,6 @@
 #include "../../includes/internal_functions.h"
 
 length_specifiers_functions_t int_cases_array[] = {
-        {"", display_and_count_nbr},
-        {"l", display_and_count_long_int},
+    {"", display_and_count_nbr},
+    {"l", display_and_count_long_int},
 };
