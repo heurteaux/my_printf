@@ -7,6 +7,7 @@
 
 #include <stdarg.h>
 #include "internal_data_structures.h"
+#include <stdbool.h>
 #pragma once
 
 void display_and_count_char(va_list to_print);
@@ -60,3 +61,5 @@ void display_and_count_maj_scientific_float(va_list ptr);
 void display_and_count_ox_hex(va_list ptr);
 
 void display_double_hex(double a);
+
+bool is_flag_present(char *flags, char a);

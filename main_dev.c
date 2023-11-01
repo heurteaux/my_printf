@@ -10,7 +10,8 @@
 
 int main(void)
 {
-    double test = 213091.19283210391839;
-    printf("Sample text %e sample text\n", test);
-    my_printf("Sample text %e sample text\n", test);
+    int test = 3819;
+
+    printf("Sample text %d sample text\n", test);
+    my_printf("Sample text %d sample text\n", test);
 }

@@ -30,11 +30,12 @@ void my_printf(const char *format, ...)
         if (format[i] == '%') {
             specifiers = collect_flags(&format[i + 1]);
             variables_handler(specifiers, ptr);
-            i++;
+            i += my_strlen(specifiers.flags) + int_length(specifiers.precision)
+                + int_length(specifiers.width) + my_strlen(specifiers.length)
+                + 1;
             continue;
         }
         my_putchar(format[i]);
     }
     va_end(ptr);
 }
-
