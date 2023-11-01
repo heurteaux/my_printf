@@ -7,11 +7,12 @@
 
 NAME		=	libmy.a
 
-SRCS	    := $(shell find $(SRC_DIRS) -name "*.c" -not -path "./tests/*" -not -path "main_dev.c")
+SRCS	    := $(shell find $(SRC_DIRS) -name "*.c" -not -path "./tests/*"	\
+ 				-not -path "main_dev.c")
 
 OBJS	=	$(SRCS:.c=.o)
 
-CFLAGS	=	-Werror -Wall -Wextra
+CFLAGS	=	-Werror -Wall -Wextra -g3
 
 TEST_NAME	=	unit_tests
 
@@ -36,6 +37,6 @@ tests_run:	$(OBJS)
 	./unit_tests
 
 dev_test: re
-	gcc main_dev.c libmy.a
+	gcc main_dev.c libmy.a -g3
 	make clean
 	./a.out
