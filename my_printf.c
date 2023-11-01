@@ -6,17 +6,39 @@
 */
 
 #include <stdarg.h>
+#include <stdbool.h>
 #include "includes/base_lib.h"
 #include "includes/conversion_specifiers_array.h"
 #include "includes/internal_functions.h"
 
+static void on_invalid_format_specifier(specifier_t specifiers)
+{
+    my_putchar('%');
+    my_putstr(specifiers.flags);
+    if (specifiers.width > 0)
+        my_put_nbr(specifiers.width);
+    if (specifiers.precision > 0) {
+        my_putchar('.');
+        my_put_nbr(specifiers.precision);
+    }
+    my_putstr(specifiers.length);
+    my_putchar(specifiers.conversion);
+}
+
 void variables_handler(specifier_t specifiers, va_list ptr)
 {
-    for (int i = 0; i < 16; i++) {
+    bool is_valid = false;
+
+    for (int i = 0; i < 14; i++) {
         if (conversion_specifiers_array[i].convertion_specifier
             == specifiers.conversion) {
             conversion_specifiers_array[i].ptr(ptr, specifiers);
+            is_valid = true;
+            break;
         }
+    }
+    if (!is_valid) {
+        on_invalid_format_specifier(specifiers);
     }
 }
 
