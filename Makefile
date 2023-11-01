@@ -7,7 +7,7 @@
 
 NAME		=	libmy.a
 
-SRCS	    := $(shell find $(SRC_DIRS) -name "*.c" -not -path "./tests/*")
+SRCS	    := $(shell find $(SRC_DIRS) -name "*.c" -not -path "./tests/*" -not -path "main_dev.c")
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -35,5 +35,7 @@ tests_run:	$(OBJS)
 	gcc -o $(TEST_NAME) $(OBJS) $(SRC_TEST) $(TESTFLAGS)
 	./unit_tests
 
-dev_test: tests_run
-	code_stl
+dev_test: re
+	gcc main_dev.c libmy.a
+	make clean
+	./a.out
