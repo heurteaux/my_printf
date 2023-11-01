@@ -5,43 +5,45 @@
 ** specifiers_collection.c
 */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "../includes/base_lib.h"
 #include "../includes/internal_data_structures.h"
 #include "../includes/internal_functions.h"
 #include "../includes/specifiers_manipulation.h"
 
-static specifier_t
-collect_conversion_specifier(const char *format, specifier_t specifier)
+static specifier_t collect_conversion_specifier(
+    const char *format, specifier_t specifier)
 {
     specifier.conversion = format[0];
     return specifier;
 }
 
-static specifier_t
-collect_length_specifier(const char *format, specifier_t specifier)
+static specifier_t collect_length_specifier(
+    const char *format, specifier_t specifier)
 {
     int character_increment = 0;
-    char *length_modifiers[] = {"hh", "h", "ll", "l", "L", "q", "j", "z", "t",
-                                NULL};
+    char *length_modifiers[] = {
+        "hh", "h", "ll", "l", "L", "q", "j", "z", "t", NULL};
 
     for (int i = 0; length_modifiers[i] != NULL; i++) {
-        if (my_strncmp(format, length_modifiers[i],
-                       my_strlen(length_modifiers[i])) == 0) {
+        if (my_strncmp(
+                format, length_modifiers[i], my_strlen(length_modifiers[i]))
+            == 0) {
             specifier.length = length_modifiers[i];
             character_increment = my_strlen(specifier.length);
             break;
         }
     }
-    return collect_conversion_specifier(&format[character_increment],
-                                        specifier);
+    return collect_conversion_specifier(
+        &format[character_increment], specifier);
 }
 
-static specifier_t
-collect_precision_specifier(const char *format, specifier_t specifier)
+static specifier_t collect_precision_specifier(
+    const char *format, specifier_t specifier)
 {
     int character_increment = 0;
+
     if (format[0] == '.') {
         specifier.precision = my_getnbr(&format[1]);
         character_increment = get_precision_length(format);
@@ -49,8 +51,8 @@ collect_precision_specifier(const char *format, specifier_t specifier)
     return collect_length_specifier(&format[character_increment], specifier);
 }
 
-static specifier_t
-collect_field_width_specifier(const char *format, specifier_t specifier)
+static specifier_t collect_field_width_specifier(
+    const char *format, specifier_t specifier)
 {
     int nb_length = 0;
 
@@ -71,7 +73,6 @@ specifier_t collect_flags(const char *format)
         flags[i] = format[i];
     }
     specifier.flags = flags;
-
     return collect_field_width_specifier(&format[i], specifier);
 }
 /*int main(void)

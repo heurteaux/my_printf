@@ -10,5 +10,5 @@
 #include "../../includes/internal_functions.h"
 
 length_specifiers_functions_t string_cases_array[] = {
-        {"", display_and_count_string},
+    {"", display_and_count_string},
 };

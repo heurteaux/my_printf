@@ -6,9 +6,9 @@
 */
 
 #pragma once
+
 #include "../../includes/internal_data_structures.h"
 #include "../../includes/internal_functions.h"
 
 length_specifiers_functions_t char_cases_array[] = {
-        {"", display_and_count_char},
-};
+    {"", display_and_count_char}};

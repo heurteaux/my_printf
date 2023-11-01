@@ -10,5 +10,5 @@
 #include "../../includes/internal_functions.h"
 
 length_specifiers_functions_t octal_cases_array[] = {
-        {"", display_and_count_octal},
+    {"", display_and_count_octal},
 };

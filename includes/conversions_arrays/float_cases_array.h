@@ -10,6 +10,4 @@
 #include "../../includes/internal_functions.h"
 
 length_specifiers_functions_t float_cases_array[] = {
-        {"", display_and_count_double},
-        {"l", display_and_count_long_double}
-};
+    {"", display_and_count_double}, {"l", display_and_count_long_double}};

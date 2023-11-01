@@ -27,7 +27,7 @@ static void superior(double nb)
 {
     int i = 0;
 
-    for (; nb > 9; i++) {
+    for (; nb > 10; i++) {
         nb /= 10;
     }
     display_double(nb);
@@ -54,4 +54,3 @@ void display_scientific(double a)
         superior(nb);
     }
 }
-
