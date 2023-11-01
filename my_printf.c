@@ -6,7 +6,6 @@
 */
 
 #include <stdarg.h>
-#include <stdio.h>
 #include "includes/base_lib.h"
 #include "includes/conversion_specifiers_array.h"
 #include "includes/internal_functions.h"
@@ -39,11 +38,3 @@ void my_printf(const char *format, ...)
     va_end(ptr);
 }
 
-/*
-int main(void)
-{
-    double test = 213091.19283210391839;
-    printf("Sample text %e sample text\n", test);
-    my_printf("Sample text %e sample text\n", test);
-}
-*/

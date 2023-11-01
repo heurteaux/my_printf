@@ -7,10 +7,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../includes/base_lib.h"
-#include "../includes/internal_data_structures.h"
-#include "../includes/internal_functions.h"
-#include "../includes/specifiers_manipulation.h"
+#include "../../includes/base_lib.h"
+#include "../../includes/internal_data_structures.h"
+#include "../../includes/internal_functions.h"
+#include "../../includes/specifiers_manipulation.h"
 
 static specifier_t collect_conversion_specifier(
     const char *format, specifier_t specifier)
@@ -75,13 +75,3 @@ specifier_t collect_flags(const char *format)
     specifier.flags = flags;
     return collect_field_width_specifier(&format[i], specifier);
 }
-/*int main(void)
-{
-    char *test = "010.2d sample text";
-    specifier_t temp = collect_flags(test);
-    printf("%s\n", temp.flags);
-    printf("%d\n", temp.width);
-    printf("%d\n", temp.precision);
-    printf("%s\n", temp.length);
-    printf("%c\n", temp.conversion);
-}*/
