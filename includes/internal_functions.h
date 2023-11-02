@@ -71,3 +71,5 @@ int find_zero(int i, double decimal_part);
 void display_double_number(double a);
 
 void float_mixed_handling(va_list ptr, __attribute__((unused)) specifier_t specifiers);
+
+void display_maj_double_number(double a);
