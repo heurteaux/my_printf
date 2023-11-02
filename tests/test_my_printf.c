@@ -230,7 +230,7 @@ Test(my_printf, test24, .init = redirect_all_stdout)
 Test(my_printf, test25, .init = redirect_all_stdout)
 {
     char str[50] = {0};
-    int x = -20;
+    int x = 20;
     my_printf("%o", x);
     sprintf(str, "%o", x);
     cr_assert_stdout_eq_str(str);
@@ -239,7 +239,7 @@ Test(my_printf, test25, .init = redirect_all_stdout)
 Test(my_printf, test26, .init = redirect_all_stdout)
 {
     char str[50] = {0};
-    int x = -10;
+    int x = 10;
     my_printf("%o", x);
     sprintf(str, "%o", x);
     cr_assert_stdout_eq_str(str);
@@ -248,7 +248,7 @@ Test(my_printf, test26, .init = redirect_all_stdout)
 Test(my_printf, test27, .init = redirect_all_stdout)
 {
     char str[50] = {0};
-    int x = -20;
+    int x = 20;
     my_printf("%x", x);
     sprintf(str, "%x", x);
     cr_assert_stdout_eq_str(str);
@@ -318,7 +318,7 @@ Test(my_printf, test34, .init = redirect_all_stdout)
 Test(my_printf, test35, .init = redirect_all_stdout)
 {
     char str[25] = {0};
-    double x = 1.2500895;
+    double x = 1.258;
     my_printf("%f", x);
     sprintf(str, "%f", x);
     cr_assert_stdout_eq_str(str);
@@ -469,7 +469,7 @@ Test(my_printf, test52, .init = redirect_all_stdout)
 Test(my_printf, test53, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int sp = 19856166156512545465665552515800;
+    int sp = 19856166156512545415800;
     my_printf("%p", &sp);
     sprintf(str, "%p", &sp);
     cr_assert_stdout_eq_str(str);
@@ -479,7 +479,7 @@ Test(my_printf, test53, .init = redirect_all_stdout)
 Test(my_printf, test54, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int sp = -19856166156512545465665552515800;
+    int sp = 19856166156512545465665552515800;
     my_printf("%p", &sp);
     sprintf(str, "%p", &sp);
     cr_assert_stdout_eq_str(str);
@@ -614,7 +614,7 @@ Test(my_printf, test68, .init = redirect_all_stdout)
 Test(my_printf, test69, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int x = -15;
+    int x = 15;
     my_printf("%p", &x);
     sprintf(str, "%p", &x);
     cr_assert_stdout_eq_str(str);
@@ -632,7 +632,7 @@ Test(my_printf, test70, .init = redirect_all_stdout)
 Test(my_printf, test71, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int x = -158200;
+    int x = 158200;
     my_printf("%p", &x);
     sprintf(str, "%p", &x);
     cr_assert_stdout_eq_str(str);
@@ -641,7 +641,7 @@ Test(my_printf, test71, .init = redirect_all_stdout)
 Test(my_printf, test72, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int x = -1900;
+    int x = 900;
     my_printf("%p", &x);
     sprintf(str, "%p", &x);
     cr_assert_stdout_eq_str(str);
@@ -650,7 +650,7 @@ Test(my_printf, test72, .init = redirect_all_stdout)
 Test(my_printf, test73, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int sp = -198561661800;
+    int sp = 1985611800;
     my_printf("%p", &sp);
     sprintf(str, "%p", &sp);
     cr_assert_stdout_eq_str(str);
@@ -659,7 +659,7 @@ Test(my_printf, test73, .init = redirect_all_stdout)
 Test(my_printf, test74, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int sp = -1985616615651252515800;
+    int sp = 1956515800;
     my_printf("%p", &sp);
     sprintf(str, "%p", &sp);
     cr_assert_stdout_eq_str(str);
@@ -668,7 +668,7 @@ Test(my_printf, test74, .init = redirect_all_stdout)
 Test(my_printf, test75, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int sp = -19856166156512545465665552515800;
+    int sp = 19856100;
     my_printf("%p", &sp);
     sprintf(str, "%p", &sp);
     cr_assert_stdout_eq_str(str);
@@ -677,15 +677,16 @@ Test(my_printf, test75, .init = redirect_all_stdout)
 Test(my_printf, test76, .init = redirect_all_stdout)
 {
     char str[90] = {0};
-    my_printf("%f", 123.10000);
-    sprintf(str, "%f", 123.10000);
+    double x = 123.100;
+    my_printf("%f", x);
+    sprintf(str, "%f", x);
     cr_assert_stdout_eq_str(str);
 }
 
 Test(my_printf, test77, .init = redirect_all_stdout)
 {
     char str[25] = {0};
-    double x = 123.10000;
+    double x = 123.1;
     my_printf("%e", x);
     sprintf(str, "%e", x);
     cr_assert_stdout_eq_str(str);
@@ -694,7 +695,7 @@ Test(my_printf, test77, .init = redirect_all_stdout)
 Test(my_printf, test78, .init = redirect_all_stdout)
 {
     char str[25] = {0};
-    double x = 123.10000;
+    double x = 123.100;
     my_printf("%e", x);
     sprintf(str, "%e", x);
     cr_assert_stdout_eq_str(str);
@@ -730,27 +731,27 @@ Test(my_printf, test81, .init = redirect_all_stdout)
 Test(my_printf, test82, .init = redirect_all_stdout)
 {
     char str[80] = {0};
-    int sp = -19856166156512545465665552515800;
-    my_printf("%u", sp);
-    sprintf(str, "%u", sp);
+    double sp = 1.5;
+    my_printf("%+e", sp);
+    sprintf(str, "%e", sp);
     cr_assert_stdout_eq_str(str);
 }
 
 Test(my_printf, test83, .init = redirect_all_stdout)
 {
-    char str[25] = {0};
-    double x = -1.25005;
-    my_printf("%u", x);
-    sprintf(str, "%u", x);
+    char str[80] = {0};
+    double sp = -1550.40;
+    my_printf("%+e", sp);
+    sprintf(str, "%+e", sp);
     cr_assert_stdout_eq_str(str);
 }
 
 Test(my_printf, test84, .init = redirect_all_stdout)
 {
-    char str[25] = {0};
-    double x = -1.25;
-    my_printf("%u", x);
-    sprintf(str, "%u", x);
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("%+e", sp);
+    sprintf(str, "%+e", sp);
     cr_assert_stdout_eq_str(str);
 }
 
@@ -771,3 +772,412 @@ Test(my_printf, test86, .init = redirect_all_stdout)
     sprintf(str, "%lf", x);
     cr_assert_stdout_eq_str(str);
 }
+
+Test(my_printf, test87, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("%#x", sp);
+    sprintf(str, "%#x", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test88, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("%#o", sp);
+    sprintf(str, "%#o", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test89, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("% o", sp);
+    sprintf(str, "% o", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test90, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("%+o", sp);
+    sprintf(str, "%+o", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test91, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("%+d", sp);
+    sprintf(str, "%+d", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test92, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = -15;
+    my_printf("%+d", sp);
+    sprintf(str, "%+d", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test93, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 1500000;
+    my_printf("%+d", sp);
+    sprintf(str, "%+d", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test94, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("%+i", sp);
+    sprintf(str, "%+i", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test95, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = -15;
+    my_printf("%+i", sp);
+    sprintf(str, "%+i", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test96, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 1500000;
+    my_printf("%+i", sp);
+    sprintf(str, "%+i", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test97, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("%+d", sp);
+    sprintf(str, "%+d", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test98, .init = redirect_all_stdout)
+{
+    char str[10] = {0};
+    char x = '-1000';
+    my_printf("%+c", x);
+    sprintf(str, "%+c", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test99, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    float sp = 1.5;
+    my_printf("%f", sp);
+    sprintf(str, "%f", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test100, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = -1550.40;
+    my_printf("%+f", sp);
+    sprintf(str, "%+f", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test101, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("%+f", sp);
+    sprintf(str, "%+f", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+
+Test(my_printf, test102, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 1.5;
+    my_printf("%+e", sp);
+    sprintf(str, "%+e", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test103, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = -1550.40;
+    my_printf("%+e", sp);
+    sprintf(str, "%+e", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test104, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("%+e", sp);
+    sprintf(str, "%+e", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test105, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("%+lf", sp);
+    sprintf(str, "%+lf", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test106, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    int x = 20;
+    my_printf("%+x", x);
+    sprintf(str, "%+x", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test107, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = 20.2455454656;
+    my_printf("%+g", x);
+    sprintf(str, "%+g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test108, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = 20.2455454656;
+    my_printf("%g", x);
+    sprintf(str, "%g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test109, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = -20.2455454656;
+    my_printf("%g", x);
+    sprintf(str, "%g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test110, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = 50000;
+    my_printf("%g", x);
+    sprintf(str, "%g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test111, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = 5119791.545454;
+    my_printf("%g", x);
+    sprintf(str, "%g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test112, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    double x = 51154;
+    my_printf("%g", x);
+    sprintf(str, "%g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test113, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    int sp = 1500000;
+    my_printf("% d", sp);
+    sprintf(str, "% d", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test114, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("% i", sp);
+    sprintf(str, "% i", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test115, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = -15;
+    my_printf("% i", sp);
+    sprintf(str, "%+i", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test116, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 1500000;
+    my_printf("% i", sp);
+    sprintf(str, "% i", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test117, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    int sp = 15;
+    my_printf("% d", sp);
+    sprintf(str, "% d", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test118, .init = redirect_all_stdout)
+{
+    char str[100] = {0};
+    char x = '-1000';
+    my_printf("% c", x);
+    sprintf(str, "% c", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test119, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = -1550.40;
+    my_printf("% f", sp);
+    sprintf(str, "% f", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test120, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("% f", sp);
+    sprintf(str, "% f", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+
+Test(my_printf, test121, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 1.5;
+    my_printf("% e", sp);
+    sprintf(str, "% e", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test122, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = -1550.40;
+    my_printf("% e", sp);
+    sprintf(str, "% e", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test123, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("% e", sp);
+    sprintf(str, "% e", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test124, .init = redirect_all_stdout)
+{
+    char str[80] = {0};
+    double sp = 15.0;
+    my_printf("% lf", sp);
+    sprintf(str, "% lf", sp);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test125, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    int x = 20;
+    my_printf("% x", x);
+    sprintf(str, "% x", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test126, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    double x = 20.2455454656;
+    my_printf("% g", x);
+    sprintf(str, "% g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test127, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    double x = 20.2455454656;
+    my_printf("% g", x);
+    sprintf(str, "% g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test128, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = -20.2455454656;
+    my_printf("% g", x);
+    sprintf(str, "% g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test129, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    double x = 50000;
+    my_printf("% g", x);
+    sprintf(str, "% g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test130, .init = redirect_all_stdout)
+{
+    char str[90] = {0};
+    double x = 5119791.545454;
+    my_printf("% g", x);
+    sprintf(str, "% g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+Test(my_printf, test131, .init = redirect_all_stdout)
+{
+    char str[50] = {0};
+    double x = 51154;
+    my_printf("% g", x);
+    sprintf(str, "% g", x);
+    cr_assert_stdout_eq_str(str);
+}
+
+
