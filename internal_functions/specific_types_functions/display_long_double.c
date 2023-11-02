@@ -23,7 +23,7 @@ void display_long_double(double a)
         decimal_part *= 10;
         tempo = (int) decimal_part;
         decimal_part = decimal_part - tempo;
-        if (i == 5 && decimal_part > 0.5) {
+        if (i == 6 && decimal_part > 0.5) {
             tempo += 1;
         }
         my_put_nbr(tempo);
