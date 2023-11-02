@@ -20,11 +20,12 @@ int find_zero(int i, double decimal_part)
     return 0;
 }
 
-void display_double_for_number(double a, int tempo)
+void display_double_for_number(double a)
 {
+    int tempo;
     int rounded = (int) a;
     double decimal_part = a - rounded;
-    int dotPrinted = 0;
+    int dot = 0;
 
     if (decimal_part < 0)
         decimal_part = decimal_part * (-1);
@@ -35,9 +36,9 @@ void display_double_for_number(double a, int tempo)
         decimal_part = decimal_part - tempo;
         if (tempo == 0 && find_zero(i, decimal_part) == 0)
             break;
-        if (dotPrinted == 0) {
+        if (dot == 0) {
             my_putstr(".");
-            dotPrinted = 1;
+            dot = 1;
         }
         my_put_nbr(tempo);
     }
