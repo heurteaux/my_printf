@@ -23,5 +23,6 @@ functions_t conversion_specifiers_array[20] = {
     {'c', char_handling},
     {'s', string_handling},
     {'p', mem_address_handling},
-    {'%', percent_handling}
+    {'%', percent_handling},
+    {'g', float_mixed_handling}
 };

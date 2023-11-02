@@ -63,3 +63,11 @@ void display_and_count_ox_hex(va_list ptr);
 void display_double_hex(double a);
 
 bool is_flag_present(char *flags, char a);
+
+void display_double_for_number(double a);
+
+int find_zero(int i, double decimal_part);
+
+void display_double_number(double a);
+
+void float_mixed_handling(va_list ptr, __attribute__((unused)) specifier_t specifiers);

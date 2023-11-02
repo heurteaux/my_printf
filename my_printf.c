@@ -29,7 +29,7 @@ void variables_handler(specifier_t specifiers, va_list ptr)
 {
     bool is_valid = false;
 
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 15; i++) {
         if (conversion_specifiers_array[i].convertion_specifier
             == specifiers.conversion) {
             conversion_specifiers_array[i].ptr(ptr, specifiers);

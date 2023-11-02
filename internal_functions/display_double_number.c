@@ -5,8 +5,7 @@
 ** display_double_number.c
 */
 #include "../includes/base_lib.h"
-//#include "../includes/internal_functions.h"
-#include <stdio.h>
+#include "../includes/internal_functions.h"
 
 void superior(double nb)
 {

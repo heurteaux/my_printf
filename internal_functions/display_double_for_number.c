@@ -30,7 +30,7 @@ void display_double_for_number(double a)
     if (decimal_part < 0)
         decimal_part = decimal_part * (-1);
     my_put_nbr(rounded);
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
         decimal_part *= 10;
         tempo = (int)decimal_part;
         decimal_part = decimal_part - tempo;

@@ -33,3 +33,5 @@ void string_handling(va_list ptr, specifier_t specifiers);
 void char_handling(va_list ptr, specifier_t specifiers);
 
 void ox_hex_handling(va_list ptr, specifier_t specifiers);
+
+void float_mixed_handling(va_list ptr, specifier_t specifiers);
