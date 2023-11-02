@@ -40,3 +40,4 @@ tests_run: re
 dev_test: re
 	gcc main_dev.c libmy.a -g3
 	make clean
+	./a.out

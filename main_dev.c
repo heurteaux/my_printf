@@ -10,7 +10,7 @@
 
 int main(void)
 {
-    double test = 29.8555555;
+    double test = 29.0;
 
     printf("Sample text %G sample text\n", test);
     my_printf("Sample text %g sample text\n", test);
