@@ -12,6 +12,6 @@ int main(void)
 {
     double test = 29.8555555;
 
-    printf("Sample text %g sample text\n", test);
+    printf("Sample text %G sample text\n", test);
     my_printf("Sample text %g sample text\n", test);
 }

@@ -6,8 +6,8 @@
 */
 
 #include <stdarg.h>
-#include "internal_data_structures.h"
 #include <stdbool.h>
+#include "internal_data_structures.h"
 #pragma once
 
 void display_and_count_char(va_list to_print);
@@ -70,4 +70,7 @@ int find_zero(int i, double decimal_part);
 
 void display_double_number(double a);
 
-void float_mixed_handling(va_list ptr, __attribute__((unused)) specifier_t specifiers);
+void float_mixed_handling(
+    va_list ptr, __attribute__((unused)) specifier_t specifiers);
+
+void display_maj_double_number(double a);

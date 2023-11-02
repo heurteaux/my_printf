@@ -35,3 +35,6 @@ void char_handling(va_list ptr, specifier_t specifiers);
 void ox_hex_handling(va_list ptr, specifier_t specifiers);
 
 void float_mixed_handling(va_list ptr, specifier_t specifiers);
+
+void float_maj_mixed_handling(
+    va_list ptr, __attribute__((unused)) specifier_t specifiers);

@@ -4,10 +4,10 @@
 ** File description:
 ** display_double_number.c
 */
-#include "../includes/base_lib.h"
-#include "../includes/internal_functions.h"
+#include "../../includes/base_lib.h"
+#include "../../includes/internal_functions.h"
 
-void superior(double nb)
+static void superior(double nb)
 {
     int i = 0;
     double tempo = nb;
@@ -17,7 +17,7 @@ void superior(double nb)
     }
     if (i >= 6) {
         display_double_for_number(nb);
-        my_putchar('e');
+        my_putchar('E');
         my_putchar('+');
         if (i <= 9) {
             my_putchar('0');
@@ -28,7 +28,7 @@ void superior(double nb)
     }
 }
 
-void inferior(double nb)
+static void inferior(double nb)
 {
     int i = 0;
     double tempo = nb;
@@ -38,7 +38,7 @@ void inferior(double nb)
     }
     if (i >= 6) {
         display_double_for_number(nb);
-        my_putchar('e');
+        my_putchar('E');
         my_putchar('-');
         if (i <= 9) {
             my_putchar('0');
@@ -49,7 +49,7 @@ void inferior(double nb)
     }
 }
 
-void display_double_number(double a)
+void display_maj_double_number(double a)
 {
     double nb = a;
 
