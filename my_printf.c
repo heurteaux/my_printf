@@ -31,7 +31,7 @@ void variables_handler(specifier_t specifiers, va_list ptr)
     bool is_valid = false;
     char buffer[32768] = {0};
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 17; i++) {
         if (conversion_specifiers_array[i].convertion_specifier
             == specifiers.conversion) {
             conversion_specifiers_array[i].ptr(ptr, specifiers, buffer);

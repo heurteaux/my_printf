@@ -40,3 +40,5 @@ void float_mixed_handling(va_list ptr, specifier_t specifiers, char *buffer);
 
 void float_maj_mixed_handling(
     va_list ptr, __attribute__((unused)) specifier_t specifiers, char *buffer);
+
+void binary_handling(va_list ptr, specifier_t specifiers, char *buffer);

@@ -10,7 +10,7 @@
 
 int main(void)
 {
-    int nb = 4;
+    int nb = 123;
 
     my_printf("%x\n", nb);
     printf("%x\n", nb);

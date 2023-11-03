@@ -6,7 +6,7 @@
 */
 
 #include "../../includes/base_lib.h"
-#include "../../includes/conversions_arrays/hex_cases_array.h"
+#include "../../includes/conversions_arrays/binary_cases_array.h"
 
 static void plus_width_handling(int width, char *buffer, char *flags)
 {
@@ -34,15 +34,15 @@ static void minus_width_handling(int width, char *buffer)
     }
 }
 
-void hex_handling(va_list ptr, specifier_t specifiers, char *buffer)
+void binary_handling(va_list ptr, specifier_t specifiers, char *buffer)
 {
     if (is_flag_present(specifiers.flags, '#'))
-        my_putstr("0x");
-    for (int i = 0; i < 2; i++) {
+        my_putstr("0b");
+    for (int i = 0; i < 1; i++) {
         if (my_strncmp(
-                hex_cases_array[i].length_specifier, specifiers.length, 2)
+                binary_cases_array[i].length_specifier, specifiers.length, 2)
             == 0) {
-            hex_cases_array[i].ptr(ptr, buffer);
+            binary_cases_array[i].ptr(ptr, buffer);
         }
     }
     if (specifiers.width > 0 && !is_flag_present(specifiers.flags, '-'))

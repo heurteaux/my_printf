@@ -25,5 +25,6 @@ functions_t conversion_specifiers_array[20] = {
     {'p', mem_address_handling},
     {'%', percent_handling},
     {'g', float_mixed_handling},
-    {'G', float_maj_mixed_handling}
+    {'G', float_maj_mixed_handling},
+    {'b', binary_handling}
 };

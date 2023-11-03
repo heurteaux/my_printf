@@ -78,3 +78,5 @@ void display_maj_double_number(double a, char *buffer);
 void my_putchar_buff(char a, char *buffer);
 
 void my_putstr_buff(char *str, char *buffer);
+
+void display_and_count_binary(va_list ptr, char *buffer);
