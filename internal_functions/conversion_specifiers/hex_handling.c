@@ -36,7 +36,7 @@ void hex_handling(va_list ptr, specifier_t specifiers, char *buffer)
 {
     if (is_flag_present(specifiers.flags, '#'))
         my_putstr_buff("0x", buffer);
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 2; i++) {
         if (my_strncmp(
                 hex_cases_array[i].length_specifier, specifiers.length, 2)
             == 0) {

@@ -12,6 +12,6 @@ int main(void)
 {
     int nb = 4;
 
-    my_printf("1 %x\n", nb);
-    printf("1 %x\n", nb);
+    my_printf("%x\n", nb);
+    printf("%x\n", nb);
 }

@@ -11,4 +11,5 @@
 
 length_specifiers_functions_t hex_cases_array[] = {
     {"", display_and_count_hex},
+    {"l", display_and_count_hex}
 };
