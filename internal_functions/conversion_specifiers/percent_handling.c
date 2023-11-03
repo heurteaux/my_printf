@@ -7,8 +7,9 @@
 
 #include "../../includes/internal_functions.h"
 
-void percent_handling(
-    va_list ptr, __attribute__((unused)) specifier_t specifiers)
+void percent_handling(va_list ptr,
+    __attribute__((unused)) specifier_t specifiers,
+    __attribute__((unused)) char *buffer)
 {
     display_and_count_percent(ptr);
 }

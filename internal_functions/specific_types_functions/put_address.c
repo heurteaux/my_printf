@@ -6,13 +6,14 @@
 */
 
 #include "../../includes/base_lib.h"
+#include "../../includes/internal_functions.h"
 
-void my_put_address(void *to_print)
+void my_put_address(void *to_print, char *buffer)
 {
     unsigned long long_to_print = (unsigned long)to_print;
 
-    my_putstr("0x");
-    my_put_nbr_base(long_to_print, "0123456789abcdef");
+    my_putstr_buff("0x", buffer);
+    my_put_nbr_base_buff(long_to_print, "0123456789abcdef", buffer);
 }
 
 /*int main(void)

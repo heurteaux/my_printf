@@ -7,10 +7,11 @@
 
 #include "../../includes/base_lib.h"
 #include "../../includes/internal_data_structures.h"
+#include "../../includes/internal_functions.h"
 
-void display_and_count_char(va_list to_print)
+void display_and_count_char(va_list to_print, char *buffer)
 {
     char to_display = va_arg(to_print, int);
 
-    my_putchar(to_display);
+    my_putchar_buff(to_display, buffer);
 }

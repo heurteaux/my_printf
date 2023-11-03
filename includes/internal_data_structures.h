@@ -18,10 +18,10 @@ typedef struct specifiers_s {
 
 typedef struct lengths_specifiers_functions_s {
     char *length_specifier;
-    void (*ptr)(va_list);
+    void (*ptr)(va_list, char *);
 } length_specifiers_functions_t;
 
 typedef struct functions_s {
     char convertion_specifier;
-    void (*ptr)(va_list, specifier_t);
+    void (*ptr)(va_list, specifier_t, char *);
 } functions_t;

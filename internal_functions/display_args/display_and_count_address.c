@@ -7,9 +7,9 @@
 
 #include "../../includes/internal_functions.h"
 
-void display_and_count_address(va_list ptr)
+void display_and_count_address(va_list ptr, char *buffer)
 {
     void *to_print = va_arg(ptr, void *);
 
-    my_put_address(to_print);
+    my_put_address(to_print, buffer);
 }

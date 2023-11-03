@@ -6,8 +6,9 @@
 */
 
 #include "../../includes/base_lib.h"
+#include "../../includes/internal_functions.h"
 
-void display_double(double a)
+void display_double(double a, char *buffer)
 {
     int tempo = 0;
     int rounded = (int) a;
@@ -16,8 +17,8 @@ void display_double(double a)
     if (decimal_part < 0) {
         decimal_part = decimal_part * (-1);
     }
-    my_put_nbr(rounded);
-    my_putstr(".");
+    my_put_nbr_buff(rounded, buffer);
+    my_putstr_buff(".", buffer);
     for (int i = 0; i < 6; i++) {
         decimal_part *= 10;
         tempo = (int) decimal_part;
@@ -25,6 +26,6 @@ void display_double(double a)
         if (i == 5 && decimal_part > 0.5) {
             tempo += 1;
         }
-        my_put_nbr(tempo);
+        my_put_nbr_buff(tempo, buffer);
     }
 }

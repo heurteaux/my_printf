@@ -28,15 +28,17 @@ static void on_invalid_format_specifier(specifier_t specifiers)
 void variables_handler(specifier_t specifiers, va_list ptr)
 {
     bool is_valid = false;
+    char buffer[32768] = {0};
 
     for (int i = 0; i < 16; i++) {
         if (conversion_specifiers_array[i].convertion_specifier
             == specifiers.conversion) {
-            conversion_specifiers_array[i].ptr(ptr, specifiers);
+            conversion_specifiers_array[i].ptr(ptr, specifiers, buffer);
             is_valid = true;
             break;
         }
     }
+    my_putstr(buffer);
     if (!is_valid) {
         on_invalid_format_specifier(specifiers);
     }

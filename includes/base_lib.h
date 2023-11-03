@@ -37,3 +37,20 @@ int my_strncmp(char const *s1, char const *s2, int n);
 int my_getnbr(const char *str);
 
 bool is_digit(char to_test);
+
+void for_negative_buff(
+    long nb, int arg_length, long result_holder, char *buffer);
+
+void for_positive_buff(
+    long nb, int arg_length, long result_holder, char *buffer);
+
+int my_put_nbr_buff(int nb_origin, char *buffer);
+
+void for_positive_b_buff(
+    unsigned long long nb, int arg_length, char *base_str, char *buffer);
+
+void for_negative_b_buff(
+    unsigned long long int nb, int arg_length, char *base_str, char *buffer);
+
+int my_put_nbr_base_buff(
+    unsigned long long nb_origin, char *base_str, char *buffer);

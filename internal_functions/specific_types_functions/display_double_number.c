@@ -7,7 +7,7 @@
 #include "../../includes/base_lib.h"
 #include "../../includes/internal_functions.h"
 
-static void superior(double nb)
+static void superior(double nb, char *buffer)
 {
     int i = 0;
     double tempo = nb;
@@ -16,19 +16,19 @@ static void superior(double nb)
         nb /= 10;
     }
     if (i >= 6) {
-        display_double_for_number(nb);
-        my_putchar('e');
-        my_putchar('+');
+        display_double_for_number(nb, buffer);
+        my_putchar_buff('e', buffer);
+        my_putchar_buff('+', buffer);
         if (i <= 9) {
-            my_putchar('0');
+            my_putchar_buff('0', buffer);
         }
-        my_put_nbr(i);
+        my_put_nbr_buff(i, buffer);
     } else {
-        display_double_for_number(tempo);
+        display_double_for_number(tempo, buffer);
     }
 }
 
-static void inferior(double nb)
+static void inferior(double nb, char *buffer)
 {
     int i = 0;
     double tempo = nb;
@@ -37,30 +37,30 @@ static void inferior(double nb)
         nb *= 10;
     }
     if (i >= 6) {
-        display_double_for_number(nb);
-        my_putchar('e');
-        my_putchar('-');
+        display_double_for_number(nb, buffer);
+        my_putchar_buff('e', buffer);
+        my_putchar_buff('-', buffer);
         if (i <= 9) {
-            my_putchar('0');
+            my_putchar_buff('0', buffer);
         }
-        my_put_nbr(i);
+        my_put_nbr_buff(i, buffer);
     } else {
-        display_double_for_number(tempo);
+        display_double_for_number(tempo, buffer);
     }
 }
 
-void display_double_number(double a)
+void display_double_number(double a, char *buffer)
 {
     double nb = a;
 
     if (nb < 0) {
-        my_putchar('-');
+        my_putchar_buff('-', buffer);
         nb = nb * (-1);
     }
     if (nb > 1) {
-        superior(nb);
+        superior(nb, buffer);
     }
     if (nb < 1) {
-        inferior(nb);
+        inferior(nb, buffer);
     }
 }

@@ -9,48 +9,48 @@
 #include "../../includes/internal_functions.h"
 #include <stdarg.h>
 
-static void inferior(double nb)
+static void inferior(double nb, char *buffer)
 {
     int i = 0;
 
     for (; nb < 1; i++) {
         nb *= 10;
     }
-    display_double(nb);
-    my_putchar('e');
-    my_putchar('-');
-    my_putchar('0');
-    my_put_nbr(i);
+    display_double(nb, buffer);
+    my_putchar_buff('e', buffer);
+    my_putchar_buff('-', buffer);
+    my_putchar_buff('0', buffer);
+    my_put_nbr_buff(i, buffer);
 }
 
-static void superior(double nb)
+static void superior(double nb, char *buffer)
 {
     int i = 0;
 
     for (; nb > 10; i++) {
         nb /= 10;
     }
-    display_double(nb);
-    my_putchar('e');
-    my_putchar('+');
+    display_double(nb, buffer);
+    my_putchar_buff('e', buffer);
+    my_putchar_buff('+', buffer);
     if (i < 9) {
-    my_putchar('0');
+    my_putchar_buff('0', buffer);
     }
-    my_put_nbr(i);
+    my_put_nbr_buff(i, buffer);
 }
 
-void display_scientific(double a)
+void display_scientific(double a, char *buffer)
 {
     double nb = a;
 
     if (nb < 0) {
-        my_putchar('-');
+        my_putchar_buff('-', buffer);
         nb = nb * (-1);
     }
     if (nb < 1) {
-        inferior(nb);
+        inferior(nb, buffer);
     }
     if (nb > 1) {
-        superior(nb);
+        superior(nb, buffer);
     }
 }

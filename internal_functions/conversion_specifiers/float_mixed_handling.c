@@ -9,9 +9,9 @@
 #include "../../includes/internal_functions.h"
 
 void float_mixed_handling(
-    va_list ptr, __attribute__((unused)) specifier_t specifiers)
+    va_list ptr, __attribute__((unused)) specifier_t specifiers, char *buffer)
 {
     double to_print = va_arg(ptr, double);
 
-    display_double_number(to_print);
+    display_double_number(to_print, buffer);
 }
