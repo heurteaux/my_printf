@@ -6,8 +6,9 @@
 */
 
 #include "../includes/base_lib.h"
+#include <stdio.h>
 
-void display_double(double a)
+void display_double(double a, int precision)
 {
     int tempo = 0;
     int rounded = (int) a;
@@ -18,7 +19,7 @@ void display_double(double a)
     }
     my_put_nbr(rounded);
     my_putstr(".");
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < precision; i++) {
         decimal_part *= 10;
         tempo = (int) decimal_part;
         decimal_part = decimal_part - tempo;
