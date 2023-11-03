@@ -34,6 +34,11 @@ static void minus_width_handling(int width, char *buffer)
 
 void weird_cond(specifier_t *specifiers, char *buffer, int nb)
 {
+    int count = int_length(nb);
+
+    for (int i = count; i < specifiers->precision; i++) {
+        my_putchar_buff('0', buffer);
+    }
     if (is_flag_present(specifiers->flags, '+') && nb >= 0
         && !is_flag_present(specifiers->flags, '0'))
         my_putchar_buff('+', buffer);

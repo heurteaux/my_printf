@@ -7,6 +7,7 @@
 
 #include <stdarg.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "includes/base_lib.h"
 #include "includes/conversion_specifiers_array.h"
 #include "includes/internal_functions.h"
@@ -44,6 +45,17 @@ void variables_handler(specifier_t specifiers, va_list ptr)
     }
 }
 
+static int get_i_increment(specifier_t specifiers)
+{
+    int increment;
+
+    increment = my_strlen(specifiers.flags) + int_length(specifiers.precision)
+        + int_length(specifiers.width) + my_strlen(specifiers.length) + 1;
+    if (specifiers.precision > 0)
+        increment++;
+    return increment;
+}
+
 void my_printf(const char *format, ...)
 {
     va_list ptr;
@@ -54,9 +66,7 @@ void my_printf(const char *format, ...)
         if (format[i] == '%') {
             specifiers = collect_flags(&format[i + 1]);
             variables_handler(specifiers, ptr);
-            i += my_strlen(specifiers.flags) + int_length(specifiers.precision)
-                + int_length(specifiers.width) + my_strlen(specifiers.length)
-                + 1;
+            i += get_i_increment(specifiers);
             continue;
         }
         my_putchar(format[i]);

@@ -13,7 +13,7 @@ SRCS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
 
 OBJS	=	$(SRCS:.c=.o)
 
-CFLAGS	=	-Werror -Wall -Wextra -g3
+CFLAGS	=	-Werror -Wall -Wextra
 
 TEST_NAME	=	unit_tests
 
@@ -38,6 +38,6 @@ tests_run: re
 	./unit_tests
 
 dev_test: re
-	gcc main_dev.c libmy.a -g3
+	gcc main_dev.c libmy.a
 	make clean
 	./a.out

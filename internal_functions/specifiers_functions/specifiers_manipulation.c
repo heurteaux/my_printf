@@ -9,7 +9,7 @@
 
 int get_precision_length(const char *format)
 {
-    int count = 0;
+    int count = 1;
 
     for (int i = 1; format[i] != '\0' && is_digit(format[i]); i++) {
         count++;
