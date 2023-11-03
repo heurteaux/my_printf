@@ -8,7 +8,7 @@
 #include "../../includes/base_lib.h"
 #include "../../includes/conversions_arrays/int_cases_array.h"
 
-void plus_width_handling(int width, char *buffer, char *flags)
+static void plus_width_handling(int width, char *buffer, char *flags)
 {
     char padding = ' ';
     int output_length = my_strlen(buffer);
@@ -22,13 +22,11 @@ void plus_width_handling(int width, char *buffer, char *flags)
     }
 }
 
-void minus_width_handling(int width, char *buffer, char *flags)
+static void minus_width_handling(int width, char *buffer)
 {
     char padding = ' ';
     int output_length = my_strlen(buffer);
 
-    if (is_flag_present(flags, '+'))
-        output_length++;
     for (int i = output_length; i < width; i++) {
         my_putchar_buff(padding, buffer);
     }
@@ -66,5 +64,5 @@ void integer_handling(va_list ptr, specifier_t specifiers, char *buffer)
     if (specifiers.width > 0 && !is_flag_present(specifiers.flags, '-'))
         plus_width_handling(specifiers.width, buffer, specifiers.flags);
     if (specifiers.width > 0 && is_flag_present(specifiers.flags, '-'))
-        minus_width_handling(specifiers.width, buffer, specifiers.flags);
+        minus_width_handling(specifiers.width, buffer);
 }
